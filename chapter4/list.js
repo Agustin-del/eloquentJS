@@ -38,15 +38,25 @@ function prepend(element, list){
     }
 }
 
-function nth(list, number) {
+// function nth(list, number) {
     
-    for(let node = list; node; node = node.rest) {
-        if (number === 0) {
-            return node.value;
-        }
-        number--;
+//     for(let node = list; node; node = node.rest) {
+//         if (number === 0) {
+//             return node.value;
+//         }
+//         number--;
+//     }
+//     return undefined;
+// }
+
+function nth(list, number) {
+    if(!list) {
+        return undefined;
     }
-    return undefined;
+    if (number === 0) {
+        return list.value
+    }
+    return nth(list.rest, number - 1);
 }
 
 function findIndex (list, value) {
@@ -59,11 +69,3 @@ function findIndex (list, value) {
     }
     return undefined;
 }
-
-let array = [1, 2, 3, 10, 9];
-
-let list = arrayToList(array);
-
-array = listToArray(list);
-
-console.log(nth(list, 4))
