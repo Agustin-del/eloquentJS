@@ -25,8 +25,9 @@ function arrayToList(array){
 
 function listToArray (list){
     let array = [];
-    for (let node = list; node; node = node.rest) {
-        array.push(node.value);
+    while(list) {
+        array.push(list.value);
+        list = list.rest;
     }
     return array;
 }

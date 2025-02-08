@@ -15,7 +15,4 @@ function reverseArrayInPlace(array) {
     return array
 }
 
-let myArray = [1 ,2, 3, 4]
-
-console.log(reverseArrayInPlace(myArray))
 

@@ -10,4 +10,3 @@ function countChar (word, char) {
 function countBs (word) {
     return countChar(word, 'B')
 }
-console.log(countChar('ABaaaawRE', 'E'))
