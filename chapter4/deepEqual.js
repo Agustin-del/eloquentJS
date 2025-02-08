@@ -3,7 +3,7 @@ function deepEqual(value1, value2) {
         return true;
     }
 
-    if ( value1 == null || value1 != 'object' || value2 == null || typeof(value2 != 'object')) {
+    if ( value1 == null || typeof value1 != 'object' || typeof value2 == null || typeof value2 != 'object') {
         return false;
     }
     
@@ -21,3 +21,12 @@ function deepEqual(value1, value2) {
     }
     return true;
 }
+
+
+let obj = {here: {is: "an"}, object: 2};
+console.log(deepEqual(obj, obj));
+// → true
+console.log(deepEqual(obj, {here: 1, object: 2}));
+// → false
+console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
+// → true

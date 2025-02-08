@@ -23,6 +23,15 @@ function arrayToList(array){
     return list;
 }
 
+//la implementación del libro es hermosa:
+// function listToArray(list) {
+//     let array = []
+//     for(let node = list; node; node = node.rest) {
+//         array.push(node.value)
+//     }
+//     return array
+// }
+
 function listToArray (list){
     let array = [];
     while(list) {
@@ -54,8 +63,8 @@ function nth(list, number) {
     if(!list) {
         return undefined;
     }
-    if (number === 0) {
-        return list.value
+    if(number === 0) {
+        return list.value;
     }
     return nth(list.rest, number - 1);
 }
